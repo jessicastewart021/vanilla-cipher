@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>DPT Vanilla Cipher</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer type="text/javascript" src="app.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <h1 class="header">Welcome to DPT Vanilla Cipher encoder/decoder</h1>
+  <textarea class="inputTextBox" type="text" id="cipherText" placeholder="Enter text here"
+    oninput="inputTextChange()"></textarea>
+  <div class="boxRow">
+    <div class="boxColumn box-1">
+      <h3 class="boxTitle">Caeser cipher</h3>
+      <hr class="dashed">
+
+      <label class="switch switch-flat">
+        <input id="caeserEncodeSwitch" class="switch-input" type="checkbox" checked onchange="translateCaeser()"/>
+        <span class="switch-label" data-on="Encoding" data-off="Decoding"></span>
+        <span class="switch-handle"></span>
+      </label>
+      <hr class="dashed">
+
+      <div class="settings">
+        <p>Rotation setting: </p>
+        <input type="number" step="1" min="1" max="13" value="1" onchange="translateCaeser()" id="caeserRotation">
+      </div>
+      <hr class="dashed">
+      <p id="caeserText"></p>
+    </div>
+    <div class="boxColumn box-2">
+      <h3 class="boxTitle">Rot13 cipher</h3>
+      <hr class="dashed">
+
+      <label class="switch switch-flat">
+        <input id="rot13EncodeSwitch" class="switch-input" type="checkbox" checked onchange="translateRot13()"/>
+        <span class="switch-label" data-on="Encoding" data-off="Decoding"></span>
+        <span class="switch-handle"></span>
+      </label>
+      <hr class="dashed">
+      <br class="break">
+      <p id="rot13Text"></p>
+
+    </div>
+
+    <div class="boxColumn box-3">
+      <h3 class="boxTitle">Vigenere cipher</h3>
+      <hr class="dashed">
+
+      <label class="switch switch-flat">
+        <input id="vigenereEncodeSwitch" class="switch-input" type="checkbox" checked onchange="translateVigenere()"/>
+        <span class="switch-label" data-on="Encoding" data-off="Decoding"></span>
+        <span class="switch-handle"></span>
+      </label>
+      <hr class="dashed">
+
+      <div class="settings">
+        <p>Keyword: </p>
+        <input type="text" id="vigenereKeyword" oninput="translateVigenere()">
+      </div>
+      <hr class="dashed">
+      <p id="vigenereText"></p>
+    </div>
+  </div>
+  </div>
+  <div class="footer">
+    <span id="dateTimeStamp"></span>
+    <div class="quote">
+      <span id="quote"></span>
+      <span class="author" id="author"></span>
+    </div>
+  </div>
+</body>
+
+</html>
